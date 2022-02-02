@@ -1,0 +1,39 @@
+MARVEL API
+
+PUBLIC KEY**
+56bbb130ef7784152fef4fde03f5de04
+
+PRIVATE KEY
+2fba2c5775b2b3bdafe922e9d4a3745897072572
+
+COMIC
+https://gateway.marvel.com:443/v1/public/comics?apikey=
+
+hash= md5(ts+privateKey+publicKey)
+
+siendo ts=1
+12fba2c5775b2b3bdafe922e9d4a374589707257256bbb130ef7784152fef4fde03f5de04
+
+hash=89b4d69d7f0a599c570e0a2a9c125901
+
+const urlAPI='https://gateway.marvel.com:443/v1/public/comics?ts=1&apikey=56bbb130ef7784152fef4fde03f5de04&hash=89b4d69d7f0a599c570e0a2a9c125901';
+
+
+del video youtube memo api
+
+const marvel = {
+    render:() => {
+        const urlAPI='https://gateway.marvel.com:443/v1/public/comics?ts=1&apikey=56bbb130ef7784152fef4fde03f5de04&hash=89b4d69d7f0a599c570e0a2a9c125901';
+        const container = document.querySelector('#marvel-row'); //llamando por el ID
+        let contentHTML = '';
+
+        fetch(urlAPI)
+        .then((response=>response.json())
+        .then((json) => {
+            console.log(json, 'RES.JSON');
+            const container = document.querySelector('#marvel-row'); //llamando por el ID
+        })
+        
+    }
+
+marvel.render(); //metodo  render: Hará que cuando se cargue el fichere marvel se llame este método
